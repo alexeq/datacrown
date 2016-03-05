@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="_source"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datacrow-core"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/hsqldb/hsqldb.jar"/>
+	<classpathentry kind="lib" path="/datacrow-core/lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="/datacrow-core/lib/zip/truezip_7_7_6.jar"/>
+	<classpathentry kind="lib" path="/datacrow-core/lib/json/json-io-2.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/apache-jstl-9.2.1.v20140609.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/servlet-api-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-core.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-el.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-jasper.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-logging-juli.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat/tomcat-embed-websocket.jar"/>
+	<classpathentry kind="output" path="_build"/>
+</classpath>
