@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="_source"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datacrow-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datacrow-server"/>
+	<classpathentry kind="lib" path="/datacrow-core/lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/webapp/datacrow/WEB-INF/lib/primefaces-5.2.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/servlet-api-3.1.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/webapp/datacrow/WEB-INF/lib/javax.faces-2.2.9.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/apache-jstl-9.2.1.v20140609.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/tomcat-embed-core.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/tomcat-embed-el.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/tomcat-embed-jasper.jar"/>
+	<classpathentry kind="lib" path="/datacrow-server/lib/tomcat/tomcat-embed-websocket.jar"/>
+	<classpathentry kind="output" path="_classes"/>
+</classpath>
