@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datacrow-client"/>
+	<classpathentry kind="lib" path="/datacrow-core/lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datacrow-core"/>
+	<classpathentry kind="output" path="_build"/>
+</classpath>
