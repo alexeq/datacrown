@@ -1,0 +1,1 @@
+java -cp jhall-2.0_05.jar com.sun.java.help.search.Indexer %*
