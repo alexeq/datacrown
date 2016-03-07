@@ -1,31 +1,29 @@
 @echo off
-echo Setting JAVA_HOME
-set JAVA_HOME=C:\Users\RJ\Data\Development\tools\Java\JDK
-echo setting PATH
-set PATH=C:\Users\RJ\Data\Development\tools\Java\JDK\bin;%PATH%
-echo Display java version
 echo Creation release %1
-java -version
 pause
 REM ..
 REM ## Build the individual packages
-cd ..\datacrow-client\help\
+cd ..\datacrow-client\help\en\
 call create_index.bat
-cd ..
+cd ..\..
 cd ..\datacrow-core
 call build.bat
-pause
+rem pause
 cd ..\datacrow-services
 call build.bat
-pause
-cd ..\datacrow-beans
-call copy.bat
+rem pause
 cd ..\datacrow-server
 call build.bat
-pause
+rem pause
+cd ..\datacrow-beans
+call build.bat
+rem pause
 cd ..\datacrow-client
 call build.bat
-pause
+rem pause
+cd ..\datacrow-plugins
+call build.bat
+rem pause
 cd ..\datacrow-build
 REM ..
 REM ## Create the staging area
@@ -45,37 +43,37 @@ REM ..
 REM ## Copy the files from the various packages
 move ..\datacrow-server\datacrow-server.jar staging\dc-server\
 copy ..\datacrow-client\datacrow.jar staging\dc-client\
-xcopy ..\datacrow-client\plugins\discid staging\dc-client\plugins\discid\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-core\lib staging\dc-client\lib\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-core\lib staging\dc-server\lib\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\lib staging\dc-client\lib\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\upgrade staging\dc-client\upgrade\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\fonts staging\dc-client\fonts\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-server\upgrade staging\dc-client\upgrade\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\readme staging\dc-client\readme\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\readme staging\dc-server\readme\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-server\lib staging\dc-client\lib\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-server\lib staging\dc-server\lib\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-services\lib staging\dc-client\lib\ /S /Y /EXCLUDE:release.exclude
-copy ..\datacrow-plugins\_build\plugins\*.class .\staging\dc-client\plugins\ /Y
-copy ..\datacrow-plugins\_build\plugins\*.class .\staging\dc-nw-client\plugins\ /Y
-xcopy ..\datacrow-client\help staging\dc-client\help\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\icons staging\dc-client\icons\ /EXCLUDE:release.exclude
-xcopy ..\datacrow-server\icons staging\dc-server\icons\ /EXCLUDE:release.exclude
-xcopy ..\datacrow-server\webapp staging\dc-server\webapp\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\modules staging\dc-client\modules\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\modules staging\dc-server\modules\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\plugins\discid staging\dc-client\plugins\discid\ /S /Y /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\reports staging\dc-client\reports\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\resources staging\dc-client\resources\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\resources staging\dc-server\resources\ /S /EXCLUDE:release.exclude
-xcopy ..\datacrow-client\services staging\dc-client\services\ /S /EXCLUDE:release.exclude
+xcopy ..\datacrow-client\plugins\discid staging\dc-client\plugins\discid\ /S /Y
+xcopy ..\datacrow-core\lib staging\dc-client\lib\ /S /Y
+xcopy ..\datacrow-core\lib staging\dc-server\lib\ /S /Y
+xcopy ..\datacrow-client\lib staging\dc-client\lib\ /S /Y
+xcopy ..\datacrow-client\upgrade staging\dc-client\upgrade\ /S /Y
+xcopy ..\datacrow-client\fonts staging\dc-client\fonts\ /S /Y
+xcopy ..\datacrow-server\upgrade staging\dc-client\upgrade\ /S /Y
+xcopy ..\datacrow-client\readme staging\dc-client\readme\ /S /Y
+xcopy ..\datacrow-client\readme staging\dc-server\readme\ /S /Y
+xcopy ..\datacrow-server\lib staging\dc-client\lib\ /S /Y
+xcopy ..\datacrow-server\lib staging\dc-server\lib\ /S /Y
+xcopy ..\datacrow-services\lib staging\dc-client\lib\ /S /Y
+copy ..\datacrow-plugins\_classes\plugins\*.class .\staging\dc-client\plugins\ /Y
+xcopy ..\datacrow-client\help staging\dc-client\help\ /S
+xcopy ..\datacrow-client\icons staging\dc-client\icons\
+xcopy ..\datacrow-server\icons staging\dc-server\icons\
+xcopy ..\datacrow-server\webapp staging\dc-server\webapp\ /S /Y
+xcopy ..\datacrow-client\modules staging\dc-client\modules\ /S
+xcopy ..\datacrow-client\modules staging\dc-server\modules\ /S
+xcopy ..\datacrow-client\plugins\discid staging\dc-client\plugins\discid\ /S /Y
+xcopy ..\datacrow-client\reports staging\dc-client\reports\ /S
+xcopy ..\datacrow-client\resources staging\dc-client\resources\ /S
+xcopy ..\datacrow-client\resources staging\dc-server\resources\ /S
+xcopy ..\datacrow-client\services staging\dc-client\services\ /S
 copy ..\datacrow-client\datacrow32bit.* staging\dc-client\
 copy ..\datacrow-client\datacrow64bit.* staging\dc-client\
 copy ..\datacrow-client\log4j.properties staging\dc-client\
 copy ..\datacrow-server\log4j.properties staging\dc-server\
 copy ..\datacrow-server\datacrow-server32bit.* staging\dc-server\
 copy ..\datacrow-server\datacrow-server64bit.* staging\dc-server\
+rem pause
 REM ..
 REM ## Change the file properties within the staging area
 chmod -R +r+w ./staging/*
@@ -93,4 +91,4 @@ cd ..
 7z a -tZip datacrow_%1_source .\datacrow-client .\datacrow-core .\datacrow-server
 move datacrow_%1_source.zip .\datacrow-build\staging\
 cd .\datacrow-build\staging\
-pause
+rem pause

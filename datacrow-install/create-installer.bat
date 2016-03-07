@@ -1,2 +1,4 @@
-call "C:/Users/RJ/Data/Development/tools/izpack/bin/compile.bat" installer.xml -b ..\
+@rem IzPack variable IZPACK_HOME must be present
+@echo Build datacrow-install
+call %IZPACK_HOME%\bin\compile.bat installer.xml -b ..\
 @echo on

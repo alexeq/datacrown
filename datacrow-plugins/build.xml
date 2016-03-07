@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build" name="data crow">
+    <target depends="build-datacrow" name="build"/>
+    <target name="build-datacrow">
+        <mkdir dir="_classes/" />
+        <javac srcdir="_source/" destdir="_classes/" debug="true">
+          <classpath>
+            <fileset dir="lib/">
+                <include name="*.jar"/>
+            </fileset> 
+            <fileset dir="../datacrow-core/lib/">
+                <include name="log4j/*.jar"/>
+            </fileset>
+          </classpath> 
+        </javac>
+    </target>
+</project>

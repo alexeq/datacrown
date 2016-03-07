@@ -1,10 +1,5 @@
 @echo off
-@echo Setting JAVA_HOME
-@set JAVA_HOME=C:\Users\RJ\Data\Development\tools\Java\JDK
-@echo setting PATH
-@set PATH=C:\Users\RJ\Data\Development\tools\Java\JDK\bin;%PATH%
-echo Display java version
-java -version
+@echo Build datacrow-services
 rd _classes /S /Q
 del standard_services_pack.jar
 call ant
